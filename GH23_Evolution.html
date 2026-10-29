@@ -8,6 +8,12 @@
     content="GH23 Evolution — Coaching sportif personnalisé avec Guéric Henry. En présentiel au Basic Fit de Terville et en ligne partout en France.">
   <title>GH23 Evolution</title>
 
+  <!-- Icônes -->
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+  <meta name="theme-color" content="#0a0c0e">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1146,14 +1152,33 @@
 
     /* RESPONSIVE */
     @media(max-width:900px) {
+      /* Mobile : photo en vignette à gauche du nom, le texte dessous en pleine largeur */
       .about-grid {
-        grid-template-columns: 1fr
+        grid-template-columns: clamp(96px, 30vw, 140px) 1fr;
+        column-gap: 18px;
+        row-gap: 22px;
+        align-items: center
+      }
+
+      .about-text {
+        display: contents
       }
 
       .about-photo {
-        width: 100%;
-        max-width: 420px;
-        margin-inline: auto
+        grid-column: 1;
+        grid-row: 1;
+        border-radius: 6px
+      }
+
+      .about-text .section-header {
+        grid-column: 2;
+        grid-row: 1;
+        margin-bottom: 0
+      }
+
+      .about-text>p,
+      .about-credentials {
+        grid-column: 1 / -1
       }
 
       .offers-grid {
@@ -1216,7 +1241,7 @@
     <div class="container">
       <div class="nav-inner">
         <a href="#" class="nav-logo" aria-label="GH23 Evolution">
-          <img src="https://userlabriq.github.io/GH23_Evolution/gh23_logo.png" alt="GH23 Evolution logo">
+          <img src="assets/gh23_logo.png" alt="GH23 Evolution logo">
         </a>
         <ul class="nav-links">
           <li><a href="#about">Le coach</a></li>
@@ -1315,7 +1340,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-photo">
-          <img src="https://userlabriq.github.io/GH23_Evolution/GH.jpg" alt="Guéric Henry coach sportif">
+          <img src="assets/GH.jpg" alt="Guéric Henry coach sportif">
         </div>
         <div class="about-text">
           <div class="section-header">
@@ -1627,7 +1652,7 @@
       <div class="footer-inner">
         <div class="footer-top">
           <div class="footer-brand">
-            <img src="https://userlabriq.github.io/GH23_Evolution/gh23_logo.png" alt="GH23 Evolution">
+            <img src="assets/gh23_logo.png" alt="GH23 Evolution">
             <span class="footer-tagline">Coach sportif à Thionville · En ligne partout en France</span>
           </div>
           <div class="footer-links">
